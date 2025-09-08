@@ -48,6 +48,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.navigation.ui)
+    implementation(libs.recycler)
     implementation(libs.navigation.dynamic.features.fragment)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

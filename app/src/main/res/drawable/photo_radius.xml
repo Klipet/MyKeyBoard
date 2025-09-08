@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Первый слой: градиентный фон -->
     <item>
-        <shape>
-
+        <shape android:shape="rectangle">
             <gradient
                 android:startColor="#4E75F6"
                 android:centerColor="#7642FF"
@@ -11,4 +10,4 @@
             <corners android:radius="14dp"/>
         </shape>
     </item>
-</selector>
+</layer-list>
