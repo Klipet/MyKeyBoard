@@ -4,4 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="keyboard">Keyboard</string>
     <string name="fonts">Fonts</string>
+    <string name="unlock_for_free">Unlock for free</string>
+    <string name="watch_the_ad_and_get_this_keyboard">Watch the ad and get this keyboard</string>
+    <string name="for_free">FOR FREE</string>
 </resources>

@@ -21,7 +21,7 @@
     <color name="unlock_badge">#FF8B5CF6</color>
     <color name="navigation_selected">#FF8B5CF6</color>
     <color name="navigation_unselected">#FF4C1D95</color>
-    <color name="navigation_indicator">#FF8B5CF6</color>
+    <color name="navigation_indicator">#C0B5FD</color>
     <color name="navigation_divider">#FFFFFFFF</color>
     <color name="popup_background">#FFE0E7FF</color>
     <color name="popup_text">#FF1F2937</color>

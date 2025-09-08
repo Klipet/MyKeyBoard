@@ -56,7 +56,7 @@ class KeyboardFragment : Fragment() {
         themeAdapter = KeyBoardAdapter(themes) { themeResourceId, position ->
             val isRewarded = isThemeRewarded(position)
             if (isRewarded) {
-                val dialog = KeyBoardDialog()
+                val dialog = KeyBoardDialog.newInstance(themeResourceId)
                 dialog.show(parentFragmentManager, "KeyBoardDialog")
             } else {
             //    applyTheme(themeResourceId)
