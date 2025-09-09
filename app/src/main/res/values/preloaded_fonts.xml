@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/corben</item>
+        <item>@font/courgette</item>
+        <item>@font/encode_sans_sc_thin</item>
+        <item>@font/homemade_apple</item>
+        <item>@font/lobster</item>
         <item>@font/montserrat_bold</item>
+        <item>@font/pacifico</item>
         <item>@font/roboto</item>
         <item>@font/roboto_black</item>
+        <item>@font/trochut</item>
     </array>
 </resources>

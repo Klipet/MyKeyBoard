@@ -19,6 +19,7 @@ class KeyBoardAdapter(
     inner class KeyBoardHolder(val binding: KbGreadBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(photo: Int, position: Int) {
             binding.ivKb.setImageResource(photo)
+            // на каждый 3 ставим картинку
             val isRewarded = position % 3 == 0
             if (isRewarded) {
                 // Показываем иконку подарка и текст "Unlock" для заблокированных тем

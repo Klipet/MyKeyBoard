@@ -10,6 +10,7 @@ import com.example.mykeyboard.R
 import com.example.mykeyboard.adapters.KeyBoardAdapter
 import com.example.mykeyboard.databinding.FragmentKeyboardBinding
 import com.example.mykeyboard.dialogs.KeyBoardDialog
+import com.example.mykeyboard.dialogs.KeyBoardDialogFree
 
 class KeyboardFragment : Fragment() {
     private var _binding: FragmentKeyboardBinding? = null
@@ -25,7 +26,7 @@ class KeyboardFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-      _binding = FragmentKeyboardBinding.inflate(inflater, container, false)
+        _binding = FragmentKeyboardBinding.inflate(inflater, container, false)
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -59,8 +60,8 @@ class KeyboardFragment : Fragment() {
                 val dialog = KeyBoardDialog.newInstance(themeResourceId)
                 dialog.show(parentFragmentManager, "KeyBoardDialog")
             } else {
-            //    applyTheme(themeResourceId)
-            //    showThemeAppliedToast()
+                val dialog = KeyBoardDialogFree()
+                dialog.show(parentFragmentManager, "KeyBoardDialog")
             }
         }
         binding.gwKeyBoard.apply {

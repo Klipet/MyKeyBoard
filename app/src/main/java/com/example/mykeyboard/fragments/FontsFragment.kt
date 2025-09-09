@@ -1,60 +1,85 @@
 package com.example.mykeyboard.fragments
 
+import android.graphics.Color
+import android.graphics.LinearGradient
+import android.graphics.Shader
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView.RecyclerListener
 import com.example.mykeyboard.R
+import com.example.mykeyboard.adapters.FontsAdapter
+import com.example.mykeyboard.data.FontInem
+import com.example.mykeyboard.databinding.FragmentFontsBinding
+import com.example.mykeyboard.databinding.FragmentKeyboardBinding
+import com.example.mykeyboard.dialogs.FontsDialog
+import com.example.mykeyboard.dialogs.KeyBoardDialog
+import com.example.mykeyboard.dialogs.KeyBoardDialogFree
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [FontsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FontsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var _binding: FragmentFontsBinding? = null
+    private val binding get() = _binding!!
+    private  lateinit var fontsAdapter: FontsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fonts, container, false)
+        _binding = FragmentFontsBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        textHeader()
+        setupFontsForAdapter()
+
+    }
+    fun textHeader(){
+        val textView: TextView = binding.tvHeaderFonts
+        val width = textView.paint.measureText(textView.text.toString())
+        val textShader = LinearGradient(
+            0f, 0f, 5f, -30f,
+            intArrayOf(
+                Color.parseColor("#4E75F6"), // start color
+                Color.parseColor("#7642FF"), // center color
+                Color.parseColor("#A315FD"), // end color
+            ),
+            null,
+            Shader.TileMode.CLAMP
+        )
+        textView.paint.shader = textShader
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FontsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FontsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun setupFontsForAdapter (){
+        val fonts = listOf(
+           FontInem("Carben", R.font.corben),
+            FontInem("Roboto", R.font.roboto),
+            FontInem("Lobster", R.font.lobster),
+            FontInem("Trochut", R.font.trochut),
+            FontInem("Pacifico", R.font.pacifico),
+            FontInem("Courgette", R.font.courgette),
+            FontInem("Homemade", R.font.homemade_apple),
+            FontInem("Chocolate", R.font.ofont_chocolate),
+            FontInem("Encode Sans", R.font.encode_sans_sc_thin)
+        )
+        fontsAdapter = FontsAdapter(fonts){ themeResourceId, points ->
+            val dialog = FontsDialog()
+            dialog.show(parentFragmentManager, "KeyBoardDialog")
+        }
+        binding.rcFontsFragment.layoutManager = LinearLayoutManager(context)
+        binding.rcFontsFragment.adapter = fontsAdapter
+
     }
+
 }

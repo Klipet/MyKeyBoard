@@ -31,7 +31,7 @@
         android:paddingStart="18dp"
         android:paddingTop="13.5dp"
         android:paddingBottom="13.5dp"
-        android:text="Try your keyboard..."
+        android:text="@string/try_your_keyboard"
         android:textColor="#565656"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"

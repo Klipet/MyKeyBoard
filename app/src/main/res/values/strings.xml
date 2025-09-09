@@ -7,4 +7,10 @@
     <string name="unlock_for_free">Unlock for free</string>
     <string name="watch_the_ad_and_get_this_keyboard">Watch the ad and get this keyboard</string>
     <string name="for_free">FOR FREE</string>
+    <string name="the_font_was_installed_successfully">The font was installed successfully.</string>
+    <string name="you_can_now_use_the_new_font_in_your_keyboard">You can now use the new font in your keyboard.</string>
+    <string name="add_fonts_to_your_keyboard">Add fonts to your keyboard</string>
+    <string name="try_your_keyboard">Try your keyboard...</string>
+    <string name="you_can_now_use_the_new_keyboard">You can now use the new keyboard.</string>
+    <string name="the_keyboard_was_installed_successfully">The keyboard was installed successfully.</string>
 </resources>
